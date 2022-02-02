@@ -30,7 +30,7 @@ class empleado(models.Model):
 
     dniEmpleado = fields.Char(string='DNI', requiered=True)
     nombreEmpleado = fields.Char(string='Nombre', requiered=True)
-    fechaNacimiento = fields.Date(string='Fecha nacimiento', requiered=True, default = fields.date.today)
+    fechaNacimiento = fields.Date(string='Fecha nacimiento', requiered=True, default = fields.date.today())
     direccionEmpleado = fields.Char(string='Dirección', requiered=True)
     telefonoEmpleado = fields.Char(string='Telefono', requiered=True)
     edad = fields.Integer('Edad', compute='getEdad')
@@ -43,7 +43,10 @@ class empleado(models.Model):
 class proyecto(models.Model):
     _name = 'proyectos.proyecto'
     _description = 'Atributos de un proyecto'
-
+    nombreProyecto = fields.Char(string='Nombre proyecto', requiered=True)
+    tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], requiered=True, help='Indica el tipo de proyecto')
+    ciudadProyecto = fields.Char(string='Ciudad')
+    decripcionProyecto = fields.Text(string='Descripcion del proyecto', help='Indica una descripción del proyecto')
 class empleado_proyecto(models.Model):
     _name = 'proyectos.empleado_proyecto'
     _description = 'Modelo relacional empleado - proyecto'
