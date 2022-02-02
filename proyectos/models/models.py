@@ -21,8 +21,11 @@ from odoo import models, fields, api
 class departamento(models.Model):
     _name = 'proyectos.departamento'
     _description = 'Define los atributos de un departamento'
-
+    
     nombreDepartamento= fields.Char(string='Nombre departamento', required=True)
+    
+    #Relaciones entre tablas
+    departamento_id = fields.One2many('proyectos.empleado')
 
 class empleado(models.Model):
     _name = 'proyectos.empleado'
@@ -39,14 +42,30 @@ class empleado(models.Model):
     def getEdad(self):
         for empleado in self:
             empleado.edad = 0
+    
+    #relaciones entre tablas
+    departamento_id = fields.Many2one('proyectos.departamento','departamento_id', string='Departamentos')
+    proyecto_ids = fields.Many2many('proyectos.proyecto', string='Proyectos')
 
 class proyecto(models.Model):
     _name = 'proyectos.proyecto'
     _description = 'Atributos de un proyecto'
+    
     nombreProyecto = fields.Char(string='Nombre proyecto', requiered=True)
     tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], requiered=True, help='Indica el tipo de proyecto')
     ciudadProyecto = fields.Char(string='Ciudad')
     decripcionProyecto = fields.Text(string='Descripcion del proyecto', help='Indica una descripción del proyecto')
-class empleado_proyecto(models.Model):
-    _name = 'proyectos.empleado_proyecto'
-    _description = 'Modelo relacional empleado - proyecto'
+
+    #Relación entre tablas
+    empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
+
+
+
+
+
+
+#class empleado_proyecto(models.Model):
+#   _name = 'proyectos.empleado_proyecto'
+#    _description = 'Modelo relacional empleado - proyecto'
+#
+#    empleado_ids = fields.Many2many('proyectos.empleado','empleado_id')
