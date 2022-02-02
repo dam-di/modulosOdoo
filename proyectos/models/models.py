@@ -16,7 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from odoo import model, fields, api
+from odoo import models, fields, api
 
 class departamento(models.Model):
     _name = 'proyectos.departamento'
