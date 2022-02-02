@@ -30,7 +30,7 @@ class departamento(models.Model):
 class empleado(models.Model):
     _name = 'proyectos.empleado'
     _description = 'Atributos para un empleado'
-
+    #atributos
     dniEmpleado = fields.Char(string='DNI', requiered=True)
     nombreEmpleado = fields.Char(string='Nombre', requiered=True)
     fechaNacimiento = fields.Date(string='Fecha nacimiento', requiered=True, default = fields.date.today())
