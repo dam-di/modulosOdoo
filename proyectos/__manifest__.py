@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "proyectos",
+    'name': "Gestión de proyectos",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Rafa SaliNipon",
+    'website': "http://infsalinas.sytes.net:10445",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -32,4 +32,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+    # Es una aplicación
+    'application' : True ,
 }
