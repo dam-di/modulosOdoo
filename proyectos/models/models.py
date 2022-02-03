@@ -25,6 +25,7 @@ class departamento(models.Model):
     nombreDepartamento= fields.Char(string='Nombre departamento', required=True)
     
     #Relaciones entre tablas
+    #Comentario de prueba
     empleado_id = fields.One2many('proyectos.empleado','departamento_id' ,string='Departamento')
 
 class empleado(models.Model):
