@@ -92,15 +92,15 @@
     </record>
 
     <record model="ir.actions.act_window" id="proyectos.departamento_action_window">
-      <field name="name">Departamentos</field>
-      <field name="res_model">proyectos.empleado</field>
+      <field name="name">Departamento</field>
+      <field name="res_model">proyectos.departamento</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <record model="ir.actions.act_window" id="proyectos.proyecto_action_window">
       <field name="name">Proyectos</field>
-      <field name="res_model">proyectos.empleado</field>
+      <field name="res_model">proyectos.proyecto</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -110,7 +110,7 @@
     <!-- menu categories -->
     <menuitem name="Empleados" id="proyectos.empleados_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
     <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
-    <menuitem name="Proyectos" id="proyectos.proyectos_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
+    <menuitem name="Proyectos" id="proyectos.proyecto_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
     
   </data>
 </odoo>
