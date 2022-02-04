@@ -40,21 +40,77 @@
     </record>
 -->
 
+<!--VISTAS DE EMPLEADOS-->
+
+<record model="ir.ui.view" id="proyectos.empleado_list_view">
+    <field name="name">proyectos.empleado.view.tree</field>
+    <field name="model">proyectos.empleado</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="dniEmpleado"/>
+        <field name="nombreEmpleado"/>
+        <field name="fechaNacimiento"/>
+        <field name="direccionEmpleado"/>
+        <field name="telefonoEmpleado"/>
+      </tree>
+    </field>
+  </record>
+
+<record model="ir.ui.view" id="proyectos.departamento_list_view">
+    <field name="name">proyectos.departamento.view.tree</field>
+    <field name="model">proyectos.departamento</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="nombreDepartamento"/>
+      </tree>
+    </field>
+  </record>
+
+
+  <record model="ir.ui.view" id="proyectos.proyecto_list_view">
+    <field name="name">proyectos.proyecto.view.tree</field>
+    <field name="model">proyectos.proyecto</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="nombreProyecto"/>
+        <field name="tipoProyecto"/>
+        <field name="ciudadProyecto"/>
+        <field name="decripcionProyecto"/>
+        <field name="fechaInicio"/>
+        <field name="fechaFin"/>
+      </tree>
+    </field>
+  </record>
+
+
+    <!--DEFINICION DE MENUS-->
     <!-- Top menu item -->
-<!--
+    <record model="ir.actions.act_window" id="proyectos.empleado_action_window">
+      <field name="name">Empleados</field>
+      <field name="res_model">proyectos.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="proyectos.departamento_action_window">
+      <field name="name">Departamentos</field>
+      <field name="res_model">proyectos.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="proyectos.proyecto_action_window">
+      <field name="name">Proyectos</field>
+      <field name="res_model">proyectos.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
     <menuitem name="proyectos" id="proyectos.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="proyectos.menu_1" parent="proyectos.menu_root"/>
-    <menuitem name="Menu 2" id="proyectos.menu_2" parent="proyectos.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="proyectos.menu_1_list" parent="proyectos.menu_1"
-              action="proyectos.action_window"/>
-    <menuitem name="Server to list" id="proyectos" parent="proyectos.menu_2"
-              action="proyectos.action_server"/>
--->
+    <menuitem name="Empleados" id="proyectos.empleados_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
+    <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
+    <menuitem name="Proyectos" id="proyectos.proyectos_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
+    
   </data>
 </odoo>

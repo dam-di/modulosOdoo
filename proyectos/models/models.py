@@ -56,7 +56,9 @@ class proyecto(models.Model):
     tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], requiered=True, help='Indica el tipo de proyecto')
     ciudadProyecto = fields.Char(string='Ciudad')
     decripcionProyecto = fields.Text(string='Descripcion del proyecto', help='Indica una descripción del proyecto')
-
+    fechaInicio = fields.Date(string='Fecha Inicio', required=True)
+    fechaFin = fields.Date(string='Fecha Final', required=True)
+    
     #Relación entre tablas
     empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
 
